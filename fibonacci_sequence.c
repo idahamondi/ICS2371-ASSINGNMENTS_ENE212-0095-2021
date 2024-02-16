@@ -1,3 +1,6 @@
+// IDAH AMONDI OMONDI
+// ENE212-0095/2021
+
 #include <stdio.h>
 
 void generateFibonacci(int n) {
