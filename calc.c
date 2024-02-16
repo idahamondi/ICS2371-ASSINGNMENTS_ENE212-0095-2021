@@ -1,5 +1,5 @@
-//IDAH AMONDI OMONDI
-//ENE212-0095/2021
+// IDAH AMONDI OMONDI
+// ENE212-0095/2021
 
 #include <stdio.h>
 #include <stdbool.h>
