@@ -1,8 +1,9 @@
-//IDAH AMONDI
+//IDAH AMONDI OMONDI
 //ENE212-0095/2021
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 int add(int a, int b) {
     return a + b;
@@ -13,13 +14,9 @@ int subtract(int a, int b) {
 }
 
 int main() {
-    char c;
+    char operation[10]; 
     int a, b;
-    char s[] = "sub";
-    char e[] = "add";
-    char y[] = "yes";
-    char n[] = "no";
-    char ch[10];
+    char choice[3]; 
 
     while (true) {
         printf("Enter the first number: ");
@@ -27,20 +24,26 @@ int main() {
         printf("Enter the second number: ");
         scanf("%d", &b);
 
-        printf("Do you want to add or subtract? Enter '%s' to subtract and '%s' to add: ", s, e);
-        scanf(" %c", &c);
+        printf("Do you want to add or subtract? Enter 'add' or 'sub': ");
+        scanf("%s", operation);
 
-        if (c == s[0]) {
-            printf("Subtraction is %d\n", subtract(a, b));
+        if (strcmp(operation, "sub") == 0) { 
+            printf("Subtraction result is %d\n", subtract(a, b));
+        } else if (strcmp(operation, "add") == 0) { 
+            printf("Addition result is %d\n", add(a, b));
         } else {
-            printf("Addition is %d\n", add(a, b));
+            printf("Invalid operation choice!\n");
+            continue;
         }
 
-        printf("\nDo you want to continue? Enter yes/no: ");
-        scanf("%s", ch);
+        printf("\nDo you want to continue? Enter 'yes' or 'no': ");
+        scanf("%s", choice);
 
-        if (ch[0] == n[0]) {
+        if (strcmp(choice, "no") == 0) {
             break;
+        } else if (strcmp(choice, "yes") != 0) {
+            printf("Invalid choice! Exiting...\n");
+            break; 
         }
     }
 
